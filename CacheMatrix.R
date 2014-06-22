@@ -4,7 +4,7 @@
 
 makeCacheMatrix <- function(xMatrix = matrix()) 
 {
-  xMatrix <- NULL
+  iMatrix <- NULL
   
   set <- function(y)
   {
@@ -15,7 +15,7 @@ makeCacheMatrix <- function(xMatrix = matrix())
   get <- function() xMatrix
   
   # Use the solve function to do the inversion.
-  setInverse <- function(solve) xMatrix <<- solve
+  setInverse <- function(solve) iMatrix <<- solve
   
   getInverse <- function() iMatrix
   
@@ -46,11 +46,11 @@ cacheSolve <- function(cached_Matrix, ...)
   
   # Else no chached inverted matrix.
 
-#  iMatrix_New <- cached_Matrix$get()
+  newMatrix <- cached_Matrix$get()
   
-#  inverted.matrix <- solve(iMatrix_New)
+  iMatrix <- solve(newMatrix)
   
-#  cached_Matrix$setInverse(iMatrix)
+  cached_Matrix$setInverse(iMatrix)
   
-#  iMatrix
+  iMatrix
 }
