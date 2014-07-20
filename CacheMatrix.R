@@ -26,6 +26,7 @@ makeCacheMatrix <- function(xMatrix = matrix())
 }
 
 
+
 ## cacheSolve returns an inverted matrix.
 # It looks first in the cache.
 # If not found in the cache then it creates a new inverted matrix.
